@@ -28,7 +28,7 @@ If you are a developer and you are building this, you may also just run `make re
 
 Further customization is possible by hardcoding `aeskeydb.bin` (just put the file into the data folder when compiling). To preset `M:/vram.mem` with data of your choice (a filesystem image, maybe) provide `vram0.img` inside the data folder, but keep in mind there's a hard 3MB limit. A standalone script runner is compiled by providing `autorun.gm9` (again, in the data folder). 
 
-To build a .firm signed with SPI boot keys (for ntrboot and the like), run `make ntrboot`. You may need to rename the output files if the ntrboot installer you use uses hardcoded filenames. Some features such as boot9 / boot11 access are not currently available from the ntrboot environment.
+To build a .firm signed with SPI boot keys (for ntrboot and the like), run `make NTRBOOT=1`. You may need to rename the output files if the ntrboot installer you use uses hardcoded filenames. Some features such as boot9 / boot11 access are not currently available from the ntrboot environment.
 
 
 ## Bootloader mode
