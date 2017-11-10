@@ -57,7 +57,8 @@ FRESULT fx_open (FIL* fp, const TCHAR* path, BYTE mode) {
     FilCryptInfo* info = fx_find_cryptinfo(fp);
     if (info) info->fptr = NULL;
     
-    if (info && (num >= 0)) {
+    if (info && (num >= 0) &&
+        (strncmp(path + 2, "/Nintendo DSiWare", 17) != 0)) {
         // get AES counter, see: http://www.3dbrew.org/wiki/Extdata#Encryption
         // path is the part of the full path after //Nintendo 3DS/<ID0>/<ID1>
         u8 hashstr[256];
